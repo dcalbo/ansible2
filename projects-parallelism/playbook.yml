@@ -1,5 +1,5 @@
 ---
-- name: Update sb servers
+- name: Update db servers
   hosts: dbservers
 
   tasks:
