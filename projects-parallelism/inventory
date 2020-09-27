@@ -1,4 +1,4 @@
-[webservers]
+[dbservers]
 servera.lab.example.com
 serverc.lab.example.com
 serverd.lab.example.com
