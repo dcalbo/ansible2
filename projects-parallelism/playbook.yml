@@ -1,18 +1,18 @@
 ---
-- name: Update web server
-  hosts: webservers
+- name: Update sb servers
+  hosts: dbservers
 
   tasks:
-    - name: Latest version of apache installed
+    - name: Latest version of postgresql installed
       yum:
-        name: httpd
+        name: postgresql
         state: latest
       notify:
-        - Restart apache
+        - Restart postgresql
 
   handlers:
-    - name: Restart apache
+    - name: Restart postgresql
       service:
-        name: httpd
+        name: postgresql
         enabled: yes
         state: restarted
