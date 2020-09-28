@@ -7,27 +7,17 @@
     - serverd.lab.example.com
 
   tasks:
-    - name: Install httpd
+    - name: Install apache
       yum:
-        name: httpd
+        name: apache2
         state: latest
 
-    - name: Enable and start httpd
+    - name: Enable and start apache
       service:
-        name: httpd
+        name: apache2
         enabled: true
         state: started
-
-    - name: Tuning configuration installed
-      copy:
-        src: files/tune.conf
-        dest: /etc/httpd/conf.d/tune.conf
-        owner: root
-        group: root
-        mode: 0644
-      notify:
-        - restart httpd
-
+  
     - name: Install firewalld
       yum:
         name: firewalld
@@ -45,9 +35,11 @@
         immediate: true
         permanent: true
         state: enabled
-
+      notify:
+        - restart apache2        
+        
   handlers:
-    - name: restart httpd
+    - name: restart apache2
       service:
-        name: httpd
+        name: apache2
         state: restarted
