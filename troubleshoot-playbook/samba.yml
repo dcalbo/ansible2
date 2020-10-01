@@ -17,6 +17,11 @@
     yum:
       name: firewalld
       state: present
+      
+  - name: install firewalld
+    yum:
+      name: firewalld-python
+      state: present
 
   - name: debug install_state variable
     debug: 
