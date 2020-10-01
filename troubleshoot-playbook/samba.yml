@@ -4,7 +4,7 @@
   user: curso
   become: true
   vars:
-    install_state: installed
+    install_state: present
     random_var: This is colon: test
 
   tasks:
