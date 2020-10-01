@@ -9,7 +9,7 @@
     - name: install postfix package
       yum:
         name: postfix
-        state: installed
+        state: present
 
     - name: install mail config files
       template:
