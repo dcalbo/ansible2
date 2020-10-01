@@ -43,7 +43,7 @@
 
    - name: deliver samba config
      template:
-       src: samba.j2
+       src: samba.conf.j2
        dest: /etc/samba/smb.conf
        owner: root
        group: root
