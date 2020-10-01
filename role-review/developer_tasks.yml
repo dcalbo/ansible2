@@ -7,14 +7,14 @@
     state: present
   loop: "{{ web_developers }}"
 
-#Allows 'student' user to login to
+#Allows 'curso' user to login to
 # any of the user accounts - for the lab only.
 # Jinja syntax for 'key' keyword available from the documentation.
-- name: Give student access to all accounts
+- name: Give curso access to all accounts
   authorized_key:
     user: "{{ item.username }}"
     state: present
-    key: "{{ lookup('file', '/home/student/.ssh/lab_rsa.pub') }}"
+    key: "{{ lookup('file', '/home/curso/.ssh/lab_rsa.pub') }}"
   loop: "{{ web_developers }}"
 
 - name: Create content directory
