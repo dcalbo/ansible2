@@ -2,7 +2,7 @@
 # start of secure web server playbook
 - name: create secure web service
   hosts: webservers
-  remote_user: curso
+  remote_user: curso2
   vars:
     random_var: This is colon: test
 
