@@ -24,7 +24,7 @@
 
   - name: start samba
     service:
-      name: smb
+      name: smbd
       state: started
       enabled: yes
 
