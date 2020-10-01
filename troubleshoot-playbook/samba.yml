@@ -16,7 +16,7 @@
   - name: install firewalld
     yum:
       name: firewalld
-      state: installed
+      state: present
 
   - name: debug install_state variable
     debug: 
