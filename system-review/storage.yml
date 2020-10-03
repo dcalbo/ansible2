@@ -4,7 +4,7 @@
   vars_files:
     - storage_vars.yml
   tasks:
-    - name: Correct partitions exist on /dev/vdb
+    - name: Correct partitions exist on /dev/sdb
       debug:
         msg: TODO
       loop: "{{ partitions }}"
