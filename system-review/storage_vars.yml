@@ -5,17 +5,17 @@ partitions:
     end: 257MiB
 
 volume_groups:
-  - name: apache-vg
+  - name: apache-vg2
     devices: /dev/sdc1
 
 logical_volumes:
   - name: content-lv
     size: 64M
-    vgroup: apache-vg
-    mount_path: /var/www
+    vgroup: apache-vg2
+    mount_path: /var/www2
 
   - name: logs-lv
     size: 128M
-    vgroup: apache-vg
-    mount_path: /var/log/httpd
+    vgroup: apache-vg2
+    mount_path: /var/log/httpd2
 
