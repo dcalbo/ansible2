@@ -6,7 +6,7 @@ partitions:
 
 volume_groups:
   - name: apache-vg
-    devices: /dev/sdb1
+    devices: /dev/sdc1
 
 logical_volumes:
   - name: content-lv
