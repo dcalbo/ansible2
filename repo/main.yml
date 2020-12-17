@@ -1,0 +1,42 @@
+---
+- name: Configura DVD
+  hosts: all
+  become: no
+  tasks:
+    - name: Add repository
+      yum_repository:
+        name: epel
+        description: YUM repo
+        baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+        gpgcheck: no
+        
+    - name: Add user curso with a password
+      user:
+        name: curso
+        password: "{{ "curso" | password_hash('sha512') }}"
+        update_password: on_create
+        
+    - name: Add user curso and generate for them an SSH key
+      user:
+        name: curso
+        generate_ssh_key: yes
+        ssh_key_bits: 2048
+        ssh_key_file: /home/curso/.ssh/id_rsa
+      when: inventory_hostname="servera"
+      
+    - name: Set authorized key taken from file
+      authorized_key:
+        user: curso
+        state: present
+        key: "{{ lookup('file', '/home/curso/.ssh/id_rsa.pub') }}"
+        
+    - name: Crear etc hosts
+      blockinfile:
+        path: /etc/hosts
+        block: |
+          172.25.0.178 servera.lab.example.com servera
+          172.25.0.179 serverb.lab.example.com serverb
+          172.25.0.180 serverc.lab.example.com serverc
+          172.25.0.181 serverd.lab.example.com serverd
+      when: inventory_hostname="servera"
+        
