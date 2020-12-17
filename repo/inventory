@@ -1,4 +1,7 @@
-servera.lab.example.com ansible_host=172.25.0.178
-serverb.lab.example.com ansible_host=172.25.0.179
-serverc.lab.example.com ansible_host=172.25.0.180
-serverd.lab.example.com ansible_host=172.25.0.181
+servera ansible_host=172.25.0.178
+serverb ansible_host=172.25.0.179
+serverc ansible_host=172.25.0.180
+serverd ansible_host=172.25.0.181
+
+[all:vars]
+ansible_ssh_pass=wkrhauto
