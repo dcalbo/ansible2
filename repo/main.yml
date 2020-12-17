@@ -1,41 +1,25 @@
 ---
-- name: Configura DVD
+- name: Configura equipos
   hosts: all
-  become: yes
+  become: no
   tasks:
-    - name: Configura RPM KEY
-      rpm_key:
-        state: present
-        key: /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
- 
-    - name: Mount DVD read-only
-      mount:
-        path: /mnt
-        src: /dev/sr0
-        fstype: iso9660
-        state: mounted
- 
-    - name: Add repository
+
+
+    - name: Add repo 1
       yum_repository:
-        name: rhel-dvd
-        description: RHEL YUM repo
-        baseurl: file:///mnt/
-
-
-    - name: Add repository
-      yum:
-        state: absent
-        name: epel-release
-
-    - name: Add key
-      rpm_key:
+        baseurl: http://mirrors.eze.sysarmy.com/centos/8/AppStream/x86_64/os/
+        name: AppStream
+        gpgcheck: no
+        description: AppStream
         state: present
-        key: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8
 
-    - name: Add repository
-      yum:
+    - name: Add repo 2
+      yum_repository:
+        baseurl: http://mirrors.eze.sysarmy.com/centos/8/BaseOS/x86_64/os/
+        name: BaseOS
+        gpgcheck: no
+        description: BaseOS
         state: present
-        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             
     - name: Add user curso with a password
       user:
