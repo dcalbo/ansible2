@@ -3,13 +3,23 @@
   hosts: all
   become: no
   tasks:
+
+
     - name: Add repository
-      yum_repository:
-        name: epel
-        description: YUM repo
-        baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-        gpgcheck: no
-        
+      yum:
+        state: absent
+        name: epel-release
+
+    - name: Add key
+      rpm_key:
+        state: present
+        key: https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8
+
+    - name: Add repository
+      yum:
+        state: present
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+            
     - name: Add user curso with a password
       user:
         name: curso
