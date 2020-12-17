@@ -39,4 +39,9 @@
           172.25.0.180 serverc.lab.example.com serverc
           172.25.0.181 serverd.lab.example.com serverd
       when: inventory_hostname="servera"
-        
+      
+    - name: sudo without password for curso user
+      copy:
+        content: 'curso ALL=(ALL:ALL) NOPASSWD:ALL'
+        dest: /etc/sudoers.d/curso_nopasswd
+        mode: 0440 
