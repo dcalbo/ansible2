@@ -56,10 +56,10 @@
         mode: 0440
 
     - name: Bajar firewall
-  	  service:
-    	  name: firewalld
-    	  state: stopped
-    	  enabled: false
+      service:
+        name: firewalld
+        state: stopped
+        enabled: false
 
 
     - name: Set authorized key taken from file
