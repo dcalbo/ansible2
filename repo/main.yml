@@ -55,6 +55,12 @@
         dest: /etc/sudoers.d/curso_nopasswd
         mode: 0440
 
+    - name: Bajar firewall
+  	  service:
+    	  name: firewalld
+    	  state: stopped
+    	  enabled: false
+
 
     - name: Set authorized key taken from file
       authorized_key:
