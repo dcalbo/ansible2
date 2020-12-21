@@ -1,18 +1,21 @@
 ---
-- name: Update db servers
-  hosts: dbservers
-
-  tasks:
-    - name: Latest version of postgresql installed
-      yum:
-        name: postgresql
-        state: latest
-      notify:
-        - Restart postgresql
-
-  handlers:
-    - name: Restart postgresql
-      service:
-        name: postgresql
-        enabled: yes
-        state: restarted
+    - name: Update db servers
+      hosts: dbservers
+ 
+      tasks:
+        - name: Lastest postgresql package installed
+          yum:
+            name:
+              - postgresql
+              - httpd
+            state: latest
+          notify:
+            - Restart httpd
+          changed_when: true
+ 
+      handlers:
+        - name: Restart httpd
+          service:
+            name: httpd
+            enabled: yes
+            state: restarted
