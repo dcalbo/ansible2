@@ -2,9 +2,11 @@
 - hosts: dbservers
   tasks:
     - service:
-        name: postgresql
+        name: httpd
         enabled: no
         state: stopped
     - yum:
-        name: postgresql
+        name: 
+          - postgresql
+          - httpd     
         state: absent
