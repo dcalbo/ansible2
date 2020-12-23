@@ -1,0 +1,106 @@
+ 276  sudo yum install docker
+  277  sudo yum install docker-compose
+  278  docker-compose
+  279  pip3
+  280  pip3 install docker-compose
+  281  sudo pip3 install docker-compose
+  282  docker-compose
+  283  cd ..
+  284  ls
+  285  mkdir downloads
+  286  cd downloads/
+  287  git clone https://github.com/ansible/awx.git
+  288  ls
+  289  cd awx
+  290  ls
+  291  cd installer/
+  292  ls
+  293  ansible-playbook -i inventory install.yml
+  294  docker ps
+  295  sudo systemctl status docker
+  296  sudo systemctl start docker
+  297  sudo systemctl umask docker
+  298  docker
+  299  ansible-playbook -i inventory install.yml  -b
+  300  sudo apt-get install containerd docker.io
+  301  sudo yum install containerd docker.io
+  302  sudo dnf -y install epel-release
+  303  sudo dnf -y install dnf-plugins-core
+  304  sudo dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+  305  sudo dnf config-manager --set-enabled PowerTools
+  306  sudo dnf install -y git python3-pip curl ansible gcc nodejs gcc-c++  gettext lvm2 device-mapper-persistent-data pwgen bzip2
+  307  sudo curl  https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo
+  308  sudo yum makecache
+  309  sudo dnf -y  install docker-ce --nobest
+  310  sudo systemctl enable --now docker
+  311  sudo yum remove podman-docker
+  312  sudo dnf -y  install docker-ce --nobest
+  313  sudo systemctl enable --now docker
+  314  systemctl status  docker
+  315  sudo usermod -aG docker $USER
+  316  docker-compose version
+  317  ls
+  318  sudo ansible-playbook -i inventory install.yml
+  319  sudo systemclt stop httpd
+  320  sudo systemctl stop httpd
+  321  sudo systemctl disable httpd
+  322  sudo ansible-playbook -i inventory install.yml
+  323  docker ps
+  324  sudo docker ps -a
+  325  docker rm -f awx_task awx_web awx_redis awx_postgres
+  326  sudo docker rm -f awx_task awx_web awx_redis awx_postgres
+  327  sudo rm -rf /home/curso/.awx
+  328  cd /home/curso/downloads/awx/installer
+  329  ansible-playbook -i inventory install.yml
+  330  sudo docker rm -f awx_task awx_web awx_redis awx_postgres
+  331  sudo rm -rf /home/curso/.awx
+  332  cd /home/curso/downloads/awx/installer
+  333  sudo ansible-playbook -i inventory install.yml
+  334  ansible-playbook -i inventory install.yml -b
+  335  docker ps
+  336  sudo docker ps
+  337  sudo docker ps
+  338  sudo docker restart awx_task awx_web awx_postgres awx_redis
+  339  sudo docker ps
+  340  sudo docker ps
+  341  sudo docker logs awx_web
+  342  sudo docker logs awx_web
+  343  sudo docker logs awx_web
+  344  sudo docker ps
+  345  sudo docker logs awx_postgres
+  346  sudo docker logs awx_postgres
+  347  sudo docker stop awx_task awx_web awx_postgres awx_redis
+  348  pwd
+  349  ls /home/curso/.awx
+  350  ls /home/curso/.awx
+  351  ls
+  352  pwd
+  353  sudo ls /home/curso/.awx
+  354  cd
+  355  ls -a
+  356  ls .ansible
+  357  cd -
+  358  ls
+  359  cd ..
+  360  ls
+  361  cd awx
+  362  ls
+  363  cd ..
+  364  ls
+  365  cd installer/
+  366  ls
+  367  sudo docker start awx_task awx_web awx_postgres awx_redis
+  368  sudo docker ps
+  369  sudo docker logs awx_web
+  370  sudo yum install chrome
+  371  curl localshot
+  372  curl localhost
+  373  sudo yum update firefox
+  374  sudo kill -9 firefox
+  375  ps
+  376  top
+  377  ps -aux
+  378  ps -aux | grep firefox
+  379  sudo kill -9 7920
+  380  firefox
+  381  history
