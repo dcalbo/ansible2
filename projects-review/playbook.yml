@@ -1,8 +1,6 @@
 ---
 - name: Install and configure web service
   hosts:
-    - servera.lab.example.com
-    - serverb.lab.example.com
     - serverc.lab.example.com
     - serverd.lab.example.com
 
@@ -28,15 +26,6 @@
         name: firewalld
         enabled: true
         state: started
-
-    - name: Open the port for http
-      firewalld:
-        service: http
-        immediate: true
-        permanent: true
-        state: enabled
-      notify:
-        - restart apache        
         
   handlers:
     - name: restart apache
