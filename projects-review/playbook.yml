@@ -3,8 +3,13 @@
   hosts:
     - serverc.lab.example.com
     - serverd.lab.example.com
+  gather_facts: no
 
   tasks:
+    - name: Ver los facts
+      debug:
+        var: ansible_facts
+
     - name: Install apache
       yum:
         name: httpd
